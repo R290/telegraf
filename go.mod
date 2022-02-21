@@ -3,7 +3,7 @@ module github.com/influxdata/telegraf
 go 1.17
 
 require (
-	cloud.google.com/go/bigquery v1.8.0
+	cloud.google.com/go/bigquery v1.28.0
 	cloud.google.com/go/monitoring v0.2.0
 	cloud.google.com/go/pubsub v1.17.0
 	collectd.org v0.5.0
@@ -63,7 +63,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.1.0
 	github.com/golang/geo v0.0.0-20190916061304-5b978397cfec
 	github.com/golang/snappy v0.0.4
-	github.com/google/go-cmp v0.5.6
+	github.com/google/go-cmp v0.5.7
 	github.com/google/go-github/v32 v32.1.0
 	github.com/gopcua/opcua v0.2.3
 	github.com/gophercloud/gophercloud v0.16.0
@@ -139,15 +139,15 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v0.24.0
 	go.starlark.net v0.0.0-20210406145628-7a1108eaa012
 	golang.org/x/net v0.0.0-20211208012354-db4efeb81f4b
-	golang.org/x/oauth2 v0.0.0-20210805134026-6f1e6394065a
+	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	golang.org/x/sys v0.0.0-20211214234402-4825e8c3871d
+	golang.org/x/sys v0.0.0-20220128215802-99c3d69c2c27
 	golang.org/x/text v0.3.7
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20211230205640-daad0b7ba671
 	gonum.org/v1/gonum v0.9.3
-	google.golang.org/api v0.54.0
-	google.golang.org/genproto v0.0.0-20210827211047-25e5f791fe06
-	google.golang.org/grpc v1.41.0
+	google.golang.org/api v0.67.0
+	google.golang.org/genproto v0.0.0-20220207164111-0872dc986b00
+	google.golang.org/grpc v1.44.0
 	google.golang.org/protobuf v1.27.1
 	gopkg.in/gorethink/gorethink.v3 v3.0.5
 	gopkg.in/olivere/elastic.v5 v5.0.86
@@ -160,7 +160,9 @@ require (
 )
 
 require (
-	cloud.google.com/go v0.93.3 // indirect
+	cloud.google.com/go v0.100.2 // indirect
+	cloud.google.com/go/compute v0.1.0 // indirect
+	cloud.google.com/go/iam v0.1.1 // indirect
 	code.cloudfoundry.org/clock v1.0.0 // indirect
 	github.com/Azure/azure-amqp-common-go/v3 v3.2.3 // indirect
 	github.com/Azure/azure-pipeline-go v0.2.3 // indirect
@@ -228,7 +230,7 @@ require (
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
-	github.com/googleapis/gax-go/v2 v2.0.5 // indirect
+	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
 	github.com/googleapis/gnostic v0.5.5 // indirect
 	github.com/grid-x/serial v0.0.0-20211107191517-583c7356b3aa // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0 // indirect
