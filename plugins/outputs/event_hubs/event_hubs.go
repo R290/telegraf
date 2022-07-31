@@ -2,14 +2,17 @@
 package event_hubs
 
 import (
+	"bytes"
 	"context"
 	_ "embed"
+	"io"
 	"time"
 
 	eventhub "github.com/Azure/azure-event-hubs-go/v3"
 
 	"github.com/influxdata/telegraf"
 	"github.com/influxdata/telegraf/config"
+	"github.com/influxdata/telegraf/internal"
 	"github.com/influxdata/telegraf/plugins/outputs"
 	"github.com/influxdata/telegraf/plugins/serializers"
 )
@@ -59,6 +62,7 @@ type EventHubs struct {
 	ConnectionString string          `toml:"connection_string"`
 	Timeout          config.Duration `toml:"timeout"`
 	PartitionKey     string          `toml:"partition_key"`
+	ContentEncoding  string          `toml:"content_encoding"`
 
 	Hub        EventHubInterface
 	serializer serializers.Serializer
@@ -114,6 +118,22 @@ func (e *EventHubs) Write(metrics []telegraf.Metric) error {
 			continue
 		}
 
+		if e.ContentEncoding == "gzip" {
+			rc, err := internal.CompressWithGzip(bytes.NewReader(payload))
+
+			if err != nil {
+				e.Log.Debugf("Could not compress metric: %v", err)
+			}
+
+			payload, err = io.ReadAll(rc)
+
+			if err != nil {
+				e.Log.Debugf("Error reading compressed bytes: %v", err)
+			}
+
+			rc.Close()
+		}
+
 		event := eventhub.NewEvent(payload)
 		if e.PartitionKey != "" {
 			if key, ok := metric.GetTag(e.PartitionKey); ok {
@@ -123,6 +143,10 @@ func (e *EventHubs) Write(metrics []telegraf.Metric) error {
 					event.PartitionKey = &strKey
 				}
 			}
+		}
+
+		if e.ContentEncoding == "gzip" {
+			event.Set("Compression", "GZip")
 		}
 
 		events = append(events, event)

@@ -64,6 +64,30 @@ func TestInitAndWrite(t *testing.T) {
 	mockHub.AssertExpectations(t)
 }
 
+func TestInitAndWriteCompression(t *testing.T) {
+	serializer, err := json.NewSerializer(time.Second, "", "")
+	require.NoError(t, err)
+	mockHub := &mockEventHub{}
+	e := &EventHubs{
+		Hub:              mockHub,
+		ConnectionString: "mock",
+		Timeout:          config.Duration(time.Second * 5),
+		ContentEncoding:  "gzip",
+		serializer:       serializer,
+	}
+
+	mockHub.On("GetHub", mock.Anything).Return(nil).Once()
+	require.NoError(t, e.Init())
+	mockHub.AssertExpectations(t)
+
+	metrics := testutil.MockMetrics()
+
+	mockHub.On("SendBatch", mock.Anything, mock.Anything, mock.Anything).Return(nil).Once()
+	err = e.Write(metrics)
+	require.NoError(t, err)
+	mockHub.AssertExpectations(t)
+}
+
 /*
 ** Integration test (requires an Event Hubs instance)
  */
