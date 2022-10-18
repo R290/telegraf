@@ -473,8 +473,13 @@ func (o *OpcUA) getData() error {
 		}
 		o.nodeData[i].TagName = o.nodes[i].tag.FieldName
 		if d.Value != nil {
-			o.nodeData[i].Value = d.Value.Value()
 			o.nodeData[i].DataType = d.Value.Type()
+
+			if o.nodeData[i].DataType == ua.TypeIDDateTime {
+				o.nodeData[i].Value = d.Value.Value().(time.Time).Format(time.RFC3339Nano)
+			} else {
+				o.nodeData[i].Value = d.Value.Value()
+			}
 		}
 		o.nodeData[i].Quality = d.Status
 		o.nodeData[i].ServerTime = d.ServerTimestamp
