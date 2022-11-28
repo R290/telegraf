@@ -1422,8 +1422,8 @@ github.com/hashicorp/memberlist v0.2.2/go.mod h1:MS2lj3INKhZjWNqd3N0m3J+Jxf3DAOn
 github.com/hashicorp/memberlist v0.3.0/go.mod h1:MS2lj3INKhZjWNqd3N0m3J+Jxf3DAOnAH9VT3Sh9MUE=
 github.com/hashicorp/memberlist v0.3.1 h1:MXgUXLqva1QvpVEDQW1IQLG0wivQAtmFlHRQ+1vWZfM=
 github.com/hashicorp/memberlist v0.3.1/go.mod h1:MS2lj3INKhZjWNqd3N0m3J+Jxf3DAOnAH9VT3Sh9MUE=
-github.com/hashicorp/packer-plugin-sdk v0.3.1 h1:Gr/mnihsdUcPfGiruFL93BQkiFh3EFPwyxxTWkwvRsQ=
-github.com/hashicorp/packer-plugin-sdk v0.3.1/go.mod h1:+GzydiXdn0CkueigqXBsX4Poz5gfmFXZ/DkxKt4fmt4=
+github.com/hashicorp/packer-plugin-sdk v0.3.2 h1:4Kqq7B8CRDMbfZmkloyz11t1hfqazJuBbW8ZFo4QlN4=
+github.com/hashicorp/packer-plugin-sdk v0.3.2/go.mod h1:XZRvL9kRqJJtB6rf9Lu2zWLJbf2/4ImWXDjp9O9UQGE=
 github.com/hashicorp/serf v0.8.2/go.mod h1:6hOLApaqBFA1NXqRQAsxw9QxuDEvNxSQRwA/JwenrHc=
 github.com/hashicorp/serf v0.9.5/go.mod h1:UWDWwZeL5cuWDJdl0C6wrvrUwEqtQ4ZKBKKENpqIUyk=
 github.com/hashicorp/serf v0.9.6/go.mod h1:TXZNMjZQijwlDvp+r0b63xZ45H7JmCmgg4gpTwn9UV4=
@@ -2430,8 +2430,8 @@ github.com/tedsuo/ifrit v0.0.0-20180802180643-bea94bb476cc/go.mod h1:eyZnKCc955u
 github.com/testcontainers/testcontainers-go v0.14.0 h1:h0D5GaYG9mhOWr2qHdEKDXpkce/VlvaYOCzTRi6UBi8=
 github.com/testcontainers/testcontainers-go v0.14.0/go.mod h1:hSRGJ1G8Q5Bw2gXgPulJOLlEBaYJHeBSOkQM5JLG+JQ=
 github.com/tetafro/godot v1.4.4/go.mod h1:FVDd4JuKliW3UgjswZfJfHq4vAx0bD/Jd5brJjGeaz4=
-github.com/thomasklein94/packer-plugin-libvirt v0.3.4 h1:K+NkHFcZuiUTp4ZiDdBhWRMZiSMdsXwGuzyg4THKDAU=
-github.com/thomasklein94/packer-plugin-libvirt v0.3.4/go.mod h1:FLQTTGhVNak3rFgrZCJ2TZR6Cywz7ef/+z5Pg11EvJg=
+github.com/thomasklein94/packer-plugin-libvirt v0.4.1 h1:+Xlg52qUtS+7E3WYMtX8Az7oHGCgwiOJnTznOT9w1rU=
+github.com/thomasklein94/packer-plugin-libvirt v0.4.1/go.mod h1:5u09Od5AAbAN3toTQ4fDL+MgvYfcPLZPmBq0upG/Jpo=
 github.com/tidwall/gjson v1.14.3 h1:9jvXn7olKEHU1S9vwoMGliaT8jq1vJ7IH/n9zD9Dnlw=
 github.com/tidwall/gjson v1.14.3/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
 github.com/tidwall/match v1.1.1 h1:+Ho715JplO36QYgwN9PGYNhgZvoUSc9X2c80KVTi+GA=
